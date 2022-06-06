@@ -21,7 +21,7 @@
         document.body.appendChild(renderer.domElement);
         renderer.setSize(width, height);
         // 背景の色を設定
-        renderer.setClearColor(0xffffdd);
+        renderer.setClearColor(0xffff00);
 
 
         // シーンを作成
@@ -60,8 +60,17 @@
         var textureLoader = new THREE.TextureLoader();  
         var texture2 = textureLoader.load("ball.png");
         const material2 = new THREE.SpriteMaterial({ map: texture2,});
+        
+        const sprite = new THREE.Sprite(material);
+        const sprite2 = new THREE.Sprite(material2);
+        
+        sprite.position.set =(3,0,0);
+        sprite2.position.set = (-3,0,0);
+        
+        scene.add(sprite);
+        scene.add(sprite2);
 
-        // ballをランダムに作成
+        /*// ballをランダムに作成
         for (let i = 0; i < 3; i++) {
           const sprite = new THREE.Sprite(material);
           const sprite2 = new THREE.Sprite(material2);
@@ -78,7 +87,7 @@
 
           scene.add(sprite);
           scene.add(sprite2);
-        }
+        }*/
         
         update();
 
