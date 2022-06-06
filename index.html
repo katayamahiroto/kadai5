@@ -21,7 +21,7 @@
         document.body.appendChild(renderer.domElement);
         renderer.setSize(width, height);
         // 背景の色を設定
-        renderer.setClearColor(0xffffdd);
+        renderer.setClearColor(0xfffffd);
 
 
         // シーンを作成
@@ -30,7 +30,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(0, 0, 5);
+        camera.position.set(0, 0, 3);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
@@ -70,10 +70,10 @@
           const sprite = new THREE.Sprite(material);
           const sprite2 = new THREE.Sprite(material2);
           // ランダムな座標に配置
-          sprite.position.x = 2 * (Math.random() - 0.5);
+          sprite.position.x = 2.7 * (Math.random() - 0.5);
           //sprite.position.y = 0.5 * Math.random();
           sprite.position.z = -2 * (i- 0.5);
-          sprite2.position.x = -2 * (Math.random() - 0.5);
+          sprite2.position.x = -2.2 * (Math.random() - 0.5);
           //sprite2.position.y = 1 * Math.random();
           sprite2.position.z = -2* (i- 0.5);
           // スケールを調整
