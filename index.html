@@ -52,13 +52,13 @@
         const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
         scene.add(axisHelper);
 
-        // 木をスプライトで作成
+        // ballをスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
-        var texture = textureLoader.load("ball.png");
+        var texture = textureLoader.load("bigboss.png");
         const material = new THREE.SpriteMaterial({ map: texture,});
 
-        // 森を作成
-        for (let i = 0; i < 20; i++) {
+        // ballをランダムに作成
+        for (let i = 0; i < 10; i++) {
           const sprite = new THREE.Sprite(material);
           // ランダムな座標に配置
           sprite.position.x = 2 * (Math.random() - 0.5);
