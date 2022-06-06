@@ -21,7 +21,7 @@
         document.body.appendChild(renderer.domElement);
         renderer.setSize(width, height);
         // 背景の色を設定
-        renderer.setClearColor(0xfffffd);
+        renderer.setClearColor(0x87cefa);
 
 
         // シーンを作成
@@ -45,6 +45,14 @@
         directionalLight2.position.set(-10, -10, 10);
         // シーンに追加
         scene.add(directionalLight2);
+        
+        // 平面を作成
+        var planeGeometry = new THREE.PlaneGeometry(5,5,10,10); //縦、横、分割数、分割数
+        var planeMaterial = new THREE.MeshBasicMaterial({color: 0xbc763c});
+        var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+        plane.rotation.set( -Math.PI/2, 0, 0 );
+        plane.position.set(0,0,0);
+        scene.add(plane);
 
         // helper
         /*const gridHelper = new THREE.GridHelper(2,10); // size, step
